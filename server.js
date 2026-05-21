@@ -28,4 +28,12 @@ app.post("/eventos", (req, res) => {
         vagasDisponiveis_evento: req.body.vagasDisponiveis_evento,
         visualizacao_evento: req.body.visualizacao_evento,
     }
+
+    eventos.push(novoEvento)
+    res.status(201).json(novoEvento);
+})
+
+// Rota - GET
+app.get("/eventos", (req, res) => {
+    res.send(eventos)
 })
